@@ -1,5 +1,5 @@
 /* eslint radix: ["error", "as-needed"] */
-import limitValue from './limit-value';
+import limitValue from "./limit-value";
 
 function scorePassword(pass, minLength, limit, variations = {}) {
   let score = 0;
@@ -21,7 +21,7 @@ function scorePassword(pass, minLength, limit, variations = {}) {
     const variationCheck = variations[variation].test(pass);
     variationCount += variationCheck === true ? 1 : 0;
   });
-  score += (variationCount - 1) * 10;
+  score += (variationCount - 1) * 17;
 
   return limitValue(score, 0, limit);
 }
